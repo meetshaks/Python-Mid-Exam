@@ -871,6 +871,11 @@
         }
 
         /* Responsive Styles */
+        /* Hide/Show pagination based on screen size */
+        .mobile-top-pagination {
+            display: none;
+        }
+
         @media (max-width: 992px) {
             .question-container {
                 grid-template-columns: 1fr;
@@ -879,6 +884,15 @@
             .navigator-panel {
                 position: static;
                 margin-top: 20px;
+            }
+
+            .mobile-top-pagination {
+                display: flex;
+                margin-bottom: 15px;
+            }
+
+            .desktop-pagination {
+                display: none;
             }
         }
 
@@ -1095,11 +1109,19 @@
                 </div>
 
                 <div class="navigator-panel">
+                    <div class="pagination mobile-top-pagination">
+                        <button class="btn" id="prevBtn" disabled>
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                        <button class="btn" id="nextBtn">
+                            Next <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                     <h3 class="navigator-title">Question Navigator</h3>
                     <div class="navigator-grid" id="navigatorGrid">
                         <!-- Navigator items will be dynamically inserted here -->
                     </div>
-                    <div class="pagination">
+                    <div class="pagination desktop-pagination">
                         <button class="btn" id="prevBtn" disabled>
                             <i class="fas fa-arrow-left"></i> Previous
                         </button>
